@@ -55,7 +55,7 @@ class IndexController extends Controller
         // 🔒 Anti akses menu Settings selain user ID 1
         $user = Auth::user();
         if (!$user || $user->id !== 1) {
-            abort(403, 'BOCAH TOLOL NGINTIP NGINTIP ');
+            abort(403, 'No Access');
         }
 
         return $this->view->make('admin.settings.index', [

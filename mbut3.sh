@@ -74,7 +74,7 @@ class LocationController extends Controller
         // 🔒 Cegah akses selain admin ID 1
         $user = Auth::user();
         if (!$user || $user->id !== 1) {
-            abort(403, 'BOCAH TOLOL NGINTIP NGINTIP ');
+            abort(403, 'No Access');
         }
 
         return $this->view->make('admin.locations.view', [
